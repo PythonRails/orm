@@ -21,9 +21,9 @@ queryset = Blog.filter(name=blog_name, user=current_user)
 queryset.filter(exclude_user=blocked_user)
 
 # get first, last or all records from queryset
-Blog.all    # or queryset.all
-Blog.first  # or queryset.first
-Blog.last   # or queryset.last
+Blog.all    # or "queryset.all"
+Blog.first  # or "queryset.first"
+Blog.last   # or "queryset.last"
 
 # create / delete / update - object
 blog = Blog.create(name='Super tech blog')
@@ -37,4 +37,10 @@ blog.delete()
 queryset = Blog.filter(user=blocked_user)
 queryset.update(date_modify=now())
 queryset.delete()
+
+# limit queryset
+records = queryset[0]    # the same as "queryset.first"
+records = queryset[:10]  # get first 10 records
+records = queryset[5:10] # get records from 6 to 10 (6, 7, 8, 9)
+records = queryset[5:]   # get records from 6
 ```

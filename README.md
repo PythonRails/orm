@@ -25,6 +25,10 @@ Examples of syntax:
 >>> Blog.first  # or "queryset.first"
 >>> Blog.last   # or "queryset.last"
 
+# results count
+>>> Blog.count
+>>> queryset.count
+
 # create / delete / update - object
 >>> blog = Blog.create(name='Super tech blog')
 >>> blog.update(name='Tech blog')
